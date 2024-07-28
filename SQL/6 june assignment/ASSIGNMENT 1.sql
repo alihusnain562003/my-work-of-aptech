@@ -1,0 +1,101 @@
+CREATE DATABASE SCHOOL;
+USE SCHOOL ;
+
+
+CREATE TABLE DEPARTMENT  (
+ID INT PRIMARY KEY NOT NULL auto_increment, 
+DEPARTMENTHEAH  NVARCHAR(255),
+AGE  NVARCHAR(255),
+CONTACT NVARCHAR(255),
+SALARY INT,
+DEPARTMENTNAME  NVARCHAR(255)
+
+);
+
+INSERT INTO  DEPARTMENTA  VALUES(NULL,"Sir Ali Husnain" , "56", "0215",' 172000' ,"Administration Department");
+INSERT INTO  DEPARTMENTA VALUES(NULL,"'Miss fatima'" , "56", "0215",' 172000' ,"Academic Department");
+INSERT INTO  DEPARTMENTA VALUES(NULL,"Sir Abdul Wali" , "24", "0215", '130300',"Student Services Department");
+INSERT INTO  DEPARTMENTA VALUES(NULL,"Sir Muhammad Ahmed" ,"46", "0215", '124000',"Human Resources Department");
+INSERT INTO DEPARTMENTA  VALUES(NULL," Sir Amir Khan " , "35", "0215", '155000',"Finance Department");
+INSERT INTO  DEPARTMENTA VALUES(NULL," Sir Amir" , "35", "0215", '115000',"Operations and Facilities Department");
+INSERT INTO  DEPARTMENTA  VALUES(NULL,"Sir Usman" , "56", "0215", '172000' ,"Technology Department");
+INSERT INTO  DEPARTMENTA VALUES(NULL,"Sir Fahad" , "24", "0215", '130300',"Community Relations Department");
+INSERT INTO  DEPARTMENTA VALUES(NULL,"Sir F" , "24", "0215", '130300',NULL);
+
+
+SELECT * FROM  DEPARTMENTA ;
+
+CREATE TABLE EMP (
+ID INT PRIMARY KEY NOT NULL auto_increment, 
+EMPNAME  NVARCHAR(255),
+AGE  INT(255),
+CONTACT NVARCHAR(255),
+SALARY INT,
+DEPARTMENT NVARCHAR(255),
+FOREIGN KEY (Department)
+        REFERENCES DEPARTMENT(id)
+);
+ 
+
+
+
+INSERT INTO EMP  VALUES(NULL,"Sir Ahmed" , "56", "0215", 175000 ,"1");
+INSERT INTO EMP  VALUES(NULL,"Sir Ali" , "24", "0215", 130000,"2");
+INSERT INTO EMP VALUES(NULL,"Miss Aisha" ,"46", "0215", 125000,"3");
+INSERT INTO EMP VALUES(NULL," Sir Hassan" , "35", "0215", 165000,"5");
+INSERT INTO EMP VALUES(NULL,"  Miss Zara" , "35", "0215", 165000,"7");
+INSERT INTO EMP  VALUES(NULL,"Sir Muhammad" , "56", "0215", 1672000 ,"6");
+INSERT INTO EMP  VALUES(NULL,"Miss Sana" , "24", "0215", 136600,"2");
+INSERT INTO EMP VALUES(NULL,"Sir Bilal" ,"46", "0215", 125000,"5");
+INSERT INTO EMP VALUES(NULL," Miss Hira" , "35", "0215", 165000,"5");
+INSERT INTO EMP VALUES(NULL,"  Miss Maryam" , "35", "0215", 155000,"4");
+INSERT INTO EMP  VALUES(NULL," Sir Farhan" , "56", "0215", 175000 ,"5");
+INSERT INTO EMP  VALUES(NULL,"Miss Hina" , "24", "0215", 130000,"2");
+INSERT INTO EMP VALUES(NULL," Sir Saad" ,"46", "0215", 125500,"6");
+INSERT INTO EMP VALUES(NULL," Miss Rabia" , "35", "0215", 165000,"1");
+INSERT INTO EMP VALUES(NULL," Miss Amna" , "35", "0215", 118000,"6");
+INSERT INTO EMP  VALUES(NULL,"Sir Shahid" , "56", "0215", 182000 ,"2");
+INSERT INTO EMP  VALUES(NULL,"Miss Sumaira" , "24", "0215", 190300,"8");
+INSERT INTO EMP VALUES(NULL,"Sir Salman" ,"46", "0215", 126000,"7");
+INSERT INTO EMP VALUES(NULL," Miss Ayesha" , "35", "0215", 165000,"8");
+INSERT INTO EMP VALUES(NULL," Sir Waqas" , "35", "0215", 116000,"4");
+INSERT INTO EMP  VALUES(NULL,"Miss Mahnoor" , "56", "0215", 166000 ,"3");
+INSERT INTO EMP  VALUES(NULL,"Sir Imran" , "24", "0215", 130000,"7");
+INSERT INTO EMP VALUES(NULL,"Miss Bushra" ,"46", "0215", 124800,"1");
+INSERT INTO EMP VALUES(NULL," Sir Irfan" , "35", "0215", 158000,"7");
+INSERT INTO EMP VALUES(NULL," Sir Asad" , "35", "0215", 115500,"3");
+INSERT INTO EMP  VALUES(NULL,"Miss Nida" , "56", "0215", 170000 ,"1");
+INSERT INTO EMP  VALUES(NULL,"Sir Arsalan" , "24", "0215", 165000,"4");
+INSERT INTO EMP VALUES(NULL,". Sir Waqar" ,"46", "0215", 168000,"3");
+INSERT INTO EMP VALUES(NULL," Sir Naveed" , "35", "0215", 165000,"6");
+INSERT INTO EMP VALUES(NULL,"Miss Arooj " , "35", "0215", 188000,"4");
+INSERT INTO EMP VALUES(NULL,"Miss D " , "35", "0215", 188000,NULL);
+
+
+
+SELECT 
+    DEPARTMENTNAME, DEPARTMENTHEAD, NAME
+FROM
+    department
+        INNER JOIN
+    emp ON department.ID = EMP.department;
+    
+    
+    
+    SELECT 
+    DEPARTMENTNAME, DEPARTMENTHEAD, name
+FROM
+    department
+        LEFT JOIN
+    emp ON department.ID = EMP.department;
+    
+    
+    
+    
+    SELECT 
+    name, departmenT, name
+FROM
+    department
+        RIGHT JOIN
+    emp ON department.ID = EMP.department;
+    

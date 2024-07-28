@@ -1,0 +1,278 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+    body{background-image: url(background.png);
+margin: 100px;
+height: auto;
+width: auto;
+
+}  
+    
+    .product-grid{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+.product-grid .product-image{ 
+    position:relative; 
+    border-radius: 30px 30px;
+    overflow: hidden;
+}
+.product-grid .product-image a.image{ display: block; }
+.product-grid .product-image a.image:before{
+    content: '';
+    background: rgba(23, 23, 23, 0.3);
+    height: 50%;
+    width: 50%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all .2s ease;
+}
+.product-grid:hover a.image:before{ opacity: 1; }
+.product-grid .product-image img{
+    width: 100%;
+    height: auto;
+}
+.product-grid .product-image .pic-1{
+    opacity: 1;
+    transform: rotateY(0);
+    transition: all 0.5s ease-out 0s;
+}
+.product-grid .product-image:hover .pic-1{
+    opacity: 0;
+    transform: rotateY(-90deg);
+}
+.product-grid .product-image .pic-2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: rotateY(-90deg);
+    transition: all 0.5s ease-out 0s;
+}
+.product-grid .product-image:hover .pic-2{
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+.product-grid .add-to-cart{
+    color: #353824;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 22px;
+    text-transform: uppercase;
+    width: 140px;
+    padding: 10px 8px;
+    border-radius: 50px 50px;
+    transform: translateX(-50%) translateY(-50%) scale(0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transition: all 0.3s ease-out 0s;
+}
+.product-grid:hover .add-to-cart{ transform: translateX(-50%) translateY(-50%) scale(2); }
+ 
+.product-grid .add-to-cart:hover{ 
+    color:#fff;
+    background:#574b90; 
+}
+
+
+.product-grid .product-links{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: all .2s ease;
+    z-index: 1;
+}
+.product-grid .product-links li{
+    margin: 0 0 5px;
+    display:block;
+    transform: translateX(-100px);
+    transition: all 0.3s;
+    transition-delay: .1s;
+}
+.product-grid:hover .product-links li{ transform: translateX(0); }
+.product-grid .product-links li a{
+    color: #fff;
+    font-size: 20px;
+    line-height:36px;
+    width: 36px;
+    height: 36px;
+    display:block;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+.product-grid .product-links li a:hover{
+    color:#fff;
+    animation: wobble 1s ease-in-out 1;
+}
+.product-grid .product-content{ padding: 12px 15px 0; }
+.product-grid .title{
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    margin: 0 0 5px;
+}
+.product-grid .title a{
+    color: #293042;
+    transition: all 0.3s ease 0s;
+}
+.product-grid .title a:hover{ color: #574b90; }
+.product-grid .rating{
+    padding: 0;
+    margin: 0 0 5px;
+    list-style: none;
+}
+.product-grid .rating li{
+    color: #ffc107;
+    font-size: 12px;
+    display: inline-block;
+    margin: 0 -1px;
+}
+.product-grid .rating li.far{ color: #a0a0a0; }
+.product-grid .price{
+    color: #574b90;
+    font-size: 18px;
+    font-weight: 700;
+    display: block;
+    position: relative;
+    margin: 0 0 10px;
+}
+.product-grid .price span{
+    color:#999;
+    font-weight: 400;
+    text-decoration: line-through;
+}   
+@keyframes wobble {
+    16.65%{ transform: translateX(8px);  }
+    33.3% { transform: translateX(-6px); }
+    49.95%{ transform: translateX(4px); }
+    66.6% { transform: translateX(-2px); }
+    83.25% { transform: translateX(1px); }
+    100% { transform: translateX(0); }     
+}
+@media screen and (max-width: 990px){
+    .product-grid{ margin-bottom: 30px; }
+}
+</style>
+<div>
+<div class="container">
+    <div class="col-md-3 col-sm-6">
+        <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="https://cdn.shopify.com/s/files/1/0537/9771/6146/files/UHHMST0001-DARK-RED-CREW-NECK-T-SHIRT_1_eadd3716-b39f-42a1-9cfc-8d45ae46e950_600x.webp?v=1682684057">
+                    <img class="pic-2" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//106/MTA-88855333/brd-23140_benhill-t-shirt-premium-pocket-tee-red-373-387-35468-s_full01.jpg">
+                </a>
+                <a class="add-to-cart" href="#">add to cart</a>
+                
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa-regular fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-eye"></i></a></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <ul class="rating">
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                  
+                </ul>
+                <h3 class="title"><a href="#">Men's T-shirt</a></h3>
+                <div class="price">Rs 850/=</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="https://zed.com.pk/cdn/shop/products/J9A8096.jpg?v=1607075682">
+                    <img class="pic-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRKGTynzmTEh-xYQnvjSdfKxQng1L6uW7UrlU2kW1VoR2x4qUIWj-DSYV4u09cefXLWHc&usqp=CAU">
+                </a>
+                <a class="add-to-cart" href="#">add to cart</a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa-regular fa-star"></i></a></li>
+                    <li><i class="fa-solid fa-cart-plus"></i></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <ul class="rating">
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                </ul>
+                <h3 class="title"><a href="#">Women's Top</a></h3>
+                <div class="price">Rs 300/=</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="https://cdn.shopify.com/s/files/1/0537/9771/6146/files/UHHMST0001-DARK-RED-CREW-NECK-T-SHIRT_1_eadd3716-b39f-42a1-9cfc-8d45ae46e950_600x.webp?v=1682684057">
+                    <img class="pic-2" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//106/MTA-88855333/brd-23140_benhill-t-shirt-premium-pocket-tee-red-373-387-35468-s_full01.jpg">
+                </a>
+                <a class="add-to-cart" href="#">add to cart</a>
+                
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa-regular fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-eye"></i></a></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <ul class="rating">
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                  
+                </ul>
+                <h3 class="title"><a href="#">Men's T-shirt</a></h3>
+                <div class="price">Rs 850/=</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="product-grid">
+            <div class="product-image">
+                <a href="#" class="image">
+                    <img class="pic-1" src="https://zed.com.pk/cdn/shop/products/J9A8096.jpg?v=1607075682">
+                    <img class="pic-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRKGTynzmTEh-xYQnvjSdfKxQng1L6uW7UrlU2kW1VoR2x4qUIWj-DSYV4u09cefXLWHc&usqp=CAU">
+                </a>
+                <a class="add-to-cart" href="#">add to cart</a>
+                <ul class="product-links">
+                    <li><a href="#"><i class="fa-regular fa-star"></i></a></li>
+                    <li><i class="fa-solid fa-cart-plus"></i></li>
+                </ul>
+            </div>
+            <div class="product-content">
+                <ul class="rating">
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                    <li class="fas fa-star"></li>
+                </ul>
+                <h3 class="title"><a href="#">Women's Top</a></h3>
+                <div class="price">Rs 300/=</div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
